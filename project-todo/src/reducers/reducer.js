@@ -4,7 +4,25 @@ export const initialState = {
     id: ""
 }
 
-export const taskReducer = (state, action) => {
+const addNewTodo = newTaskName => {
+    const AddTask = {
+        task: newTaskName.name,
+        completed: false,
+        id: new Date()
+    }
 
+    const newTaskList = [...state, AddTask];
+              setNewTask(newTaskList);
+}
+
+export const taskReducer = (state, action) => {
+    switch (action.type) {
+        case "ADD_TASK":
+            return {
+              
+            };
+        default:
+            return state;    
+    }
 };
 
