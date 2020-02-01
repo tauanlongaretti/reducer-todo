@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import Tasks from "./components/Tasks";
+import ListForm from "./components/ListForm";
 import Header from "./components/Header";
 
 function App() {
+
   return (
     <div className="App">
       <Header />
-      <Tasks />
+      <ListForm />
     </div>
   );
 }

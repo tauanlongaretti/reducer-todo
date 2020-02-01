@@ -1,28 +1,28 @@
-export const initialState = {
-    task: 'Finish project',
+export const initialState = [
+  {
+    task: "Finish project",
     completed: false,
-    id: ""
-}
-
-const addNewTodo = newTaskName => {
-    const AddTask = {
-        task: newTaskName.name,
-        completed: false,
-        id: new Date()
-    }
-
-    const newTaskList = [...state, AddTask];
-              setNewTask(newTaskList);
-}
+    id: "1234"
+  },
+  {
+    task: "Clean garage",
+    completed: false,
+    id: "5678"
+  }
+];
 
 export const taskReducer = (state, action) => {
-    switch (action.type) {
-        case "ADD_TASK":
-            return {
-              
-            };
-        default:
-            return state;    
-    }
+  switch (action.type) {
+    case "ADD_TASK":
+      return [
+        ...state,
+        {
+          task: action.payload,
+          completed: false,
+          id: new Date()
+        }
+      ];
+    default:
+      return state;
+  }
 };
-
