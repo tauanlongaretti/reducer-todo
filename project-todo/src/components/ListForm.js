@@ -20,6 +20,11 @@ const ListForm = () => {
     dispatch({ type: "COMPLETED_TASK", id: id });
   };
 
+  const handleClearTask = e => {
+    dispatch({ type: "CLEAR_TASK" });
+    e.preventDefault();
+  }
+
   return (
     <div>
       <form className="task-form">
@@ -27,18 +32,22 @@ const ListForm = () => {
           className="task-input"
           type="text"
           name="newTaskText"
+          placeholder="New Task"
           value={newTask}
           onChange={handleChanges}
         />
-        <button onClick={handleAddTask}>Add</button>
+        <button className="add-btn" onClick={handleAddTask}>Add</button>
       </form>
       <section>
         <div className="task-list">
           {state.map(todo => (
-            <Task key={todo.id} todo={todo} toggleCompleted={toggleCompleted}/>
+            <Task key={todo.id} todo={todo} toggleCompleted={toggleCompleted} />
           ))}
         </div>
       </section>
+      <div>
+        <button className="clear-btn" onClick={handleClearTask}>Clear Completed Tasks</button>
+      </div>
     </div>
   );
 };

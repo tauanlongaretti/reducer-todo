@@ -24,12 +24,18 @@ export const taskReducer = (state, action) => {
       ];
     case "COMPLETED_TASK":
       return state.map(todo => {
-        if(todo.id === action.id) {
-            return {...todo, completed: !todo.completed}
+        if (todo.id === action.id) {
+          return { ...todo, completed: !todo.completed };
         }
-        return todo  
-        }) 
-      default:
+        return todo;
+      });
+    case "CLEAR_TASK":
+      return [
+        ...state.filter(todo => {
+          return todo.completed === false;
+        })
+      ]
+    default:
       return state;
   }
 };
