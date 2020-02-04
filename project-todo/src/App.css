@@ -1,3 +1,33 @@
 .App {
-  text-align: center;
+  text-align: center;;
+}
+
+.task-list{
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  margin: 5% 25%;
+}
+
+.todo {
+  padding: 20px;
+  border: solid #fff0e6 5px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #cc5200, #ff7315);
+  color: white;
+  font-weight: 500;
+  font-size: 22px;
+  width: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  transform: skew(-10deg);
+}
+
+.todo.completed {
+  text-decoration: line-through;
+  background-image: linear-gradient(to right, #ff751a, #ffb380);
+}
+
+.header {
+  color: #3a3535;
 }
