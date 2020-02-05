@@ -12,8 +12,9 @@ const ListForm = () => {
   };
 
   const handleAddTask = e => {
-    dispatch({ type: "ADD_TASK", payload: newTask });
     e.preventDefault();
+    dispatch({ type: "ADD_TASK", payload: newTask });
+    setNewTask("");
   };
 
   const toggleCompleted = id => {
